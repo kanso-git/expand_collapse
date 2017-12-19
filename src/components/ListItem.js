@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Text, StyleSheet } from 'react-native';
+import React, { PureComponent } from 'react';
+import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 
 
 const styles = StyleSheet.create({
@@ -10,10 +10,22 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class ListItem extends Component {
-
+class ListItem extends PureComponent {
+  onPress = () => {
+    this.props.onPressItem(this.props.key);
+  };
   render() {
-    const {title} = this.props.item;
-    return (<Text style={styles.item}> {title}</Text>);
+    const { title } = this.props;
+    return (
+      <TouchableOpacity onPress={this.onPress}>
+        <View>
+          <Text style={styles.item}>
+            {title}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    );
   }
-};
+}
+
+export default ListItem;

@@ -7,9 +7,6 @@ import { Header } from './components/common';
 import LibraryList from './components/LibraryList';
 
 
-
-
-
 const App = () => (
   <Provider store={createStore(reducers)}>
     <View style={{ flex: 1 }}>
