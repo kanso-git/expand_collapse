@@ -1,0 +1,3 @@
+rootProject.name = 'expand_collapse'
+
+include ':app'
